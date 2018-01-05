@@ -1,4 +1,5 @@
 import GUI.MainFrame;
+import Utils.SoundUtil;
 import Utils.WebUtil;
 import sun.applet.Main;
 
@@ -16,9 +17,13 @@ public class App {
         System.out.println("Connecting to "+ URL_LINK);
         //1. connect to the web
         WebUtil.connectToWebsite(URL_LINK);
+
         //2. extract the tags from the web
         ArrayList<String> tags = WebUtil.getItems();
+
         //3. create the wav files from the tags
+        SoundUtil.createWavFiles(tags);
+
         //4. place the wav files in their location and play them
 
         //test - print all the tags

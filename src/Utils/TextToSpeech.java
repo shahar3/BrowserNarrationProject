@@ -1,3 +1,4 @@
+package Utils;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -9,7 +10,6 @@ import java.util.stream.StreamSupport;
 
 import javax.sound.sampled.AudioInputStream;
 
-import Utils.AudioPlayer;
 import marytts.LocalMaryInterface;
 import marytts.MaryInterface;
 import marytts.exceptions.MaryConfigurationException;
@@ -21,7 +21,7 @@ import marytts.signalproc.effects.AudioEffects;
 
 public class TextToSpeech {
 
-    private AudioPlayer tts;
+    private AudioPlayer audioPlayer;
     private MaryInterface marytts;
 
     /**
@@ -53,7 +53,7 @@ public class TextToSpeech {
      *            <b>False</b> The current Thread calling this method will continue freely after calling this method
      * @param fileName
      */
-    public void speak(String text , float gainValue , boolean daemon , boolean join,String fileName) {
+    public void saveToFile(String text , float gainValue , boolean daemon , boolean join,String fileName) {
 
         // Stop the previous player
         stopSpeaking();
@@ -62,14 +62,14 @@ public class TextToSpeech {
 
             // Player is a thread(threads can only run one time) so it can be
             // used has to be initiated every time
-            tts = new AudioPlayer();
-            tts.setAudio(audio);
-            tts.setFileName(fileName);
-            tts.setGain(gainValue);
-            tts.setDaemon(daemon);
-            tts.start();
+            audioPlayer = new AudioPlayer();
+            audioPlayer.setAudio(audio);
+            audioPlayer.setFileName(fileName);
+            audioPlayer.setGain(gainValue);
+            audioPlayer.setDaemon(daemon);
+            audioPlayer.start();
             if (join)
-                tts.join();
+                audioPlayer.join();
 
         } catch (SynthesisException ex) {
             Logger.getLogger(getClass().getName()).log(Level.WARNING, "Error saying phrase.", ex);
@@ -77,7 +77,7 @@ public class TextToSpeech {
             Logger.getLogger(getClass().getName()).log(Level.WARNING, "IO Exception", ex);
         } catch (InterruptedException ex) {
             Logger.getLogger(getClass().getName()).log(Level.WARNING, "Interrupted ", ex);
-            tts.interrupt();
+            audioPlayer.interrupt();
         }
     }
 
@@ -86,8 +86,8 @@ public class TextToSpeech {
      */
     public void stopSpeaking() {
         // Stop the previous player
-        if (tts != null)
-            tts.cancel();
+        if (audioPlayer != null)
+            audioPlayer.cancel();
     }
 
     //----------------------GETTERS---------------------------------------------------//
