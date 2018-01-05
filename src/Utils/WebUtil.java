@@ -62,7 +62,7 @@ public class WebUtil {
             String linkText = link.text();
 
             //add only the links with text
-            if (linkText.trim().length() == 0)
+            if (linkText.trim().length() != 0)
                 items.add(linkText.trim());
         }
         return items;

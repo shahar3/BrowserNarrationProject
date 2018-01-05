@@ -255,7 +255,7 @@ public class AudioPlayer extends Thread {
 
         //save file/////////////////////////////////////////////////////////////////////
         //  File fileOut = new File("audio/" + fileName + ".wav");
-        File fileOut = new File("./src/main/resources/audio/" + fileName + ".wav");
+        File fileOut = new File("./src/resources/audio/" + fileName + ".wav");
         AudioFileFormat.Type fileType = AudioFileFormat.Type.WAVE;
         try {
             AudioSystem.write(ais, fileType, fileOut);
