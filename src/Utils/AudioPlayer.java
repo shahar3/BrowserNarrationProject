@@ -274,7 +274,6 @@ public class AudioPlayer extends Thread {
             }
             if (nRead >= 0) {
                 line.write(abData, 0, nRead);
-
             }
         }
         if (!exitRequested) {
