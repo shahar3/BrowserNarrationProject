@@ -17,7 +17,6 @@ public class WebUtil {
 
     /**
      * Takes the webpage url and connect to it
-     *
      * @param url
      */
     public static void connectToWebsite(String url) {
@@ -28,12 +27,19 @@ public class WebUtil {
         }
     }
 
+    /**
+     * Get the tags from the webpage and returns it as an ArrayList
+     * @return
+     */
     public static ArrayList<String> getItems() {
+        //check if we are connected to the webpage
         if (doc == null) {
             return null;
         }
 
+        //create an empty array list to store the tags
         ArrayList<String> items = new ArrayList<>();
+
         Elements links = doc.getElementsByTag("a");
         for (Element link : links) {
             String linkText = link.text();
