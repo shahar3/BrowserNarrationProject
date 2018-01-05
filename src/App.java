@@ -1,4 +1,6 @@
+import GUI.MainFrame;
 import Utils.WebUtil;
+import sun.applet.Main;
 
 import java.util.ArrayList;
 
@@ -16,9 +18,12 @@ public class App {
         WebUtil.connectToWebsite(URL_LINK);
         //2. extract the tags from the web
         ArrayList<String> tags = WebUtil.getItems();
-        
+
         //test - print all the tags
         //testTags(tags);
+
+        //open GUI
+        MainFrame app = new MainFrame();
     }
 
     private static void testTags(ArrayList<String> tags) {
