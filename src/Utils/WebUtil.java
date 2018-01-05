@@ -28,7 +28,7 @@ public class WebUtil {
         try {
             doc = Jsoup.connect(url).get();
 
-            System.setProperty("webdriver.chrome.driver", "C:\\Drivers\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", ".src\\chromedriver.exe");
 
             WebDriver driver = new ChromeDriver();
             driver.get(url); //open the url in chrome
