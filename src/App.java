@@ -18,6 +18,8 @@ public class App {
         WebUtil.connectToWebsite(URL_LINK);
         //2. extract the tags from the web
         ArrayList<String> tags = WebUtil.getItems();
+        //3. create the wav files from the tags
+        //4. place the wav files in their location and play them
 
         //test - print all the tags
         //testTags(tags);
