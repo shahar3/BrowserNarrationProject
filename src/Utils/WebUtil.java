@@ -4,6 +4,10 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,11 +21,22 @@ public class WebUtil {
 
     /**
      * Takes the webpage url and connect to it
+     *
      * @param url
      */
     public static void connectToWebsite(String url) {
         try {
             doc = Jsoup.connect(url).get();
+
+            System.setProperty("webdriver.chrome.driver", "C:\\Drivers\\chromedriver.exe");
+
+            WebDriver driver = new ChromeDriver();
+            driver.get(url); //open the url in chrome
+            try {
+                Thread.sleep(5000);  // Let the user actually see something!
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -29,6 +44,7 @@ public class WebUtil {
 
     /**
      * Get the tags from the webpage and returns it as an ArrayList
+     *
      * @return
      */
     public static ArrayList<String> getItems() {
@@ -40,10 +56,14 @@ public class WebUtil {
         //create an empty array list to store the tags
         ArrayList<String> items = new ArrayList<>();
 
+        //get all the `a` tags
         Elements links = doc.getElementsByTag("a");
         for (Element link : links) {
             String linkText = link.text();
-            items.add(linkText);
+
+            //add only the links with text
+            if (linkText.trim().length() == 0)
+                items.add(linkText.trim());
         }
         return items;
     }
