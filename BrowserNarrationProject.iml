@@ -108,17 +108,17 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://$USER_HOME$/Desktop/LWJ" />
+          <root url="file://$MODULE_DIR$/../src/Libraries/LWJ" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="file://$USER_HOME$/Desktop/LWJ" />
+          <root url="file://$MODULE_DIR$/../src/Libraries/LWJ" />
         </SOURCES>
-        <jarDirectory url="file://$USER_HOME$/Desktop/LWJ" recursive="false" />
-        <jarDirectory url="file://$USER_HOME$/Desktop/LWJ" recursive="false" type="SOURCES" />
+        <jarDirectory url="file://$MODULE_DIR$/../src/Libraries/LWJ" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../src/Libraries/LWJ" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
   </component>
