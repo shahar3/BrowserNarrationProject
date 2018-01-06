@@ -1,8 +1,8 @@
+package App;
+
 import GUI.MainFrame;
 import Utils.SoundUtil;
 import Utils.WebUtil;
-import sun.applet.Main;
-
 import java.util.ArrayList;
 
 /**
