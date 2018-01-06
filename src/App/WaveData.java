@@ -1,4 +1,4 @@
-/* 
+package App;/*
  * Copyright (c) 2002-2004 LWJGL Project
  * All rights reserved.
  * 
@@ -51,7 +51,7 @@ import java.util.logging.Logger;
  *
  * @author Brian Matzon <brian@matzon.dk>
  * @version $Revision: 2286 $
- *          $Id: WaveData.java 2286 2006-03-23 19:32:21Z matzon $
+ *          $Id: App.WaveData.java 2286 2006-03-23 19:32:21Z matzon $
  */
 public class WaveData
 {
@@ -73,7 +73,7 @@ public class WaveData
 	public final int samplerate;
 
 	/**
-	 * Creates a new WaveData
+	 * Creates a new App.WaveData
 	 *
 	 * @param data       actual wavedata
 	 * @param format     format of wave data
@@ -95,10 +95,10 @@ public class WaveData
 	}
 
 	/**
-	 * Creates a WaveData container from the specified url
+	 * Creates a App.WaveData container from the specified url
 	 *
 	 * @param path URL to file
-	 * @return WaveData containing data, or null if a failure occured
+	 * @return App.WaveData containing data, or null if a failure occured
 	 */
 	public static WaveData create(URL path)
 	{
@@ -115,10 +115,10 @@ public class WaveData
 	}
 
 	/**
-	 * Creates a WaveData container from the specified in the classpath
+	 * Creates a App.WaveData container from the specified in the classpath
 	 *
 	 * @param path path to file (relative, and in classpath)
-	 * @return WaveData containing data, or null if a failure occured
+	 * @return App.WaveData containing data, or null if a failure occured
 	 */
 	public static WaveData create(String path)
 	{
@@ -127,10 +127,10 @@ public class WaveData
 	}
 
 	/**
-	 * Creates a WaveData container from the specified inputstream
+	 * Creates a App.WaveData container from the specified inputstream
 	 *
 	 * @param is InputStream to read from
-	 * @return WaveData containing data, or null if a failure occured
+	 * @return App.WaveData containing data, or null if a failure occured
 	 */
 	public static WaveData create(InputStream is)
 	{
@@ -146,10 +146,10 @@ public class WaveData
 	}
 
 	/**
-	 * Creates a WaveData container from the specified bytes
+	 * Creates a App.WaveData container from the specified bytes
 	 *
 	 * @param buffer array of bytes containing the complete wave file
-	 * @return WaveData containing data, or null if a failure occured
+	 * @return App.WaveData containing data, or null if a failure occured
 	 */
 	public static WaveData create(byte[] buffer)
 	{
@@ -166,12 +166,12 @@ public class WaveData
 	}
 
 	/**
-	 * Creates a WaveData container from the specified ByetBuffer.
+	 * Creates a App.WaveData container from the specified ByetBuffer.
 	 * If the buffer is backed by an array, it will be used directly,
 	 * else the contents of the buffer will be copied using get(byte[]).
 	 *
 	 * @param buffer ByteBuffer containing sound file
-	 * @return WaveData containing data, or null if a failure occured
+	 * @return App.WaveData containing data, or null if a failure occured
 	 */
 	public static WaveData create(ByteBuffer buffer)
 	{
@@ -196,10 +196,10 @@ public class WaveData
 	}
 
 	/**
-	 * Creates a WaveData container from the specified stream
+	 * Creates a App.WaveData container from the specified stream
 	 *
 	 * @param ais AudioInputStream to read from
-	 * @return WaveData containing data, or null if a failure occured
+	 * @return App.WaveData containing data, or null if a failure occured
 	 */
 	public static WaveData create(AudioInputStream ais)
 	{

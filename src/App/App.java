@@ -11,6 +11,7 @@ import java.util.ArrayList;
  * one system
  */
 public class App {
+    private static final float LISTENER_POS_X = 0,LISTENER_POS_Y = 0,LISTENER_POS_Z = 0;
     private static final String URL_LINK = "http://edition.cnn.com/US/OJ/"; //the webpage url
 
     public static void main(String[] args){
@@ -23,8 +24,11 @@ public class App {
 
         //3. create the wav files from the tags
         SoundUtil.createWavFiles(tags);
-
-        //4. place the wav files in their location and play them
+        //4. play them
+        AudioMaster.init();
+        AudioMaster.setListenerData(LISTENER_POS_X,LISTENER_POS_Y,LISTENER_POS_Z);
+        SoundUtil.createSources(tags);
+        SoundUtil.playTags();
 
 
         //test - print all the tags

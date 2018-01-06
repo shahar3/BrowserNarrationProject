@@ -108,22 +108,17 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/Libraries/lwjgl.jar!/" />
+          <root url="file://$USER_HOME$/Desktop/LWJ" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/Libraries/lwjgl-openal.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="file://$USER_HOME$/Desktop/LWJ" />
+        </SOURCES>
+        <jarDirectory url="file://$USER_HOME$/Desktop/LWJ" recursive="false" />
+        <jarDirectory url="file://$USER_HOME$/Desktop/LWJ" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
   </component>
