@@ -32,11 +32,6 @@ public class WebUtil {
 
             WebDriver driver = new ChromeDriver();
             driver.get(url); //open the url in chrome
-            try {
-                Thread.sleep(5000);  // Let the user actually see something!
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
         } catch (IOException e) {
             e.printStackTrace();
         }
