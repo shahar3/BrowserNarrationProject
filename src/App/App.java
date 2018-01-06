@@ -36,6 +36,7 @@ public class App {
 
         //open GUI
         MainFrame app = new MainFrame();
+        app.init();
     }
 
     private static void testTags(ArrayList<String> tags) {
