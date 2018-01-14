@@ -23,12 +23,12 @@ public class App {
         ArrayList<String> tags = WebUtil.getItems();
 
         //3. create the wav files from the tags
-        SoundUtil.createWavFiles(tags);
-        //4. play them
         AudioMaster.init();
         AudioMaster.setListenerData(LISTENER_POS_X,LISTENER_POS_Y,LISTENER_POS_Z);
+        SoundUtil.createWavFiles(tags);
+        //4. play them
         SoundUtil.createSources(tags);
-        SoundUtil.playTags();
+//        SoundUtil.playTags();
 
 
         //test - print all the tags

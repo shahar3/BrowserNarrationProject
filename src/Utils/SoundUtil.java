@@ -50,7 +50,7 @@ public class SoundUtil {
         sourceList = new ArrayList<Source>();
         double xInc = 40.000 / 2;
         double yInc = 20.0 / 3.0;
-        for (int i = 0; i < tags.size(); i++) {
+        for (int i = 0; i < 3; i++) {
             final int buffer = AudioMaster.loadSound("audio/" + tags.get(i) + ".wav");
             bufferList.add(buffer);
             final Source source = new Source();
@@ -66,7 +66,7 @@ public class SoundUtil {
             System.out.println("y : " + (float) (0 + (i * yInc)));
             source.setLooping(true);
             sourceList.add(source);
-//            source.play(buffer);
+            source.play(buffer);
             try {
                 Thread.sleep(400);
             } catch (InterruptedException e) {
